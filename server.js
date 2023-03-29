@@ -30,7 +30,7 @@ app.post("/bfhl", (req, res) => {
       }
       else
       {
-        responseObj.odd_numbers.push(num);
+        returnObj.odd_numbers.push(num);
       }
     }
     else returnObj.alphabets.push(item.toUpperCase());
