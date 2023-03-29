@@ -14,7 +14,7 @@ app.post("/bfhl", (req, res) => {
   const returnObj = {
     is_success: true,
     user_id: "avijit_rana_13122002",
-    email: "avijit@gmail.com",
+    email: "avijit1126.be20@chitkarauniversity.edu.in",
     roll_number: 2011981126,
     odd_numbers: [],
     even_numbers:[],
