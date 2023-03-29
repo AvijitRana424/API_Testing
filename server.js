@@ -11,25 +11,33 @@ app.get("/", (req, res) => {
 
 app.post("/bfhl", (req, res) => {
   const array = req.body.data;
-  const responseObj = {
+  const returnObj = {
     is_success: true,
     user_id: "avijit_rana_13122002",
     email: "avijit@gmail.com",
-    roll_number: 20119811126,
-    numbers: [],
+    roll_number: 2011981126,
+    odd_numbers: [],
+    even_numbers:[],
     alphabets: [],
   };
   array.forEach((item) => {
     let num = parseInt(item);
-    if (num) responseObj.numbers.push(num);
-    else responseObj.alphabets.push(item);
+    if (num) 
+    {
+      if(num%2 == 0)
+      {
+        returnObj.even_numbers.push(num);
+      }
+      else
+      {
+        responseObj.odd_numbers.push(num);
+      }
+    }
+    else returnObj.alphabets.push(item);
   });
-  res.json(responseObj);
+  res.json(returnObj);
 });
 
 app.listen(port, (err) => {
-  const starterText = err
-    ? `Error in starting server`
-    : `Server started at port http://localhost:${port}/`;
-  console.log(starterText);
+  console.log(`Server is started in ${port}`);
 });
